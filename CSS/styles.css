@@ -255,3 +255,44 @@ p {
     text-align: center;
   }
 }
+
+/* ================= CARROSSEL PROJETOS ================= */
+
+.carrossel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.carrossel {
+  width: 100%;
+  max-width: 700px;
+}
+
+.projeto-card {
+  text-align: center;
+  animation: fadeIn 0.4s ease;
+}
+
+.projeto-card img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 0.75rem;
+  margin: 1rem 0;
+}
+
+.carrossel-btn {
+  background-color: var(--bg);
+  border: 1px solid var(--borda);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.carrossel-btn:hover {
+  background-color: var(--acao);
+  color: white;
+}
