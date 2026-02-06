@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfólio | Raphael Álem</title>
+
+    <!-- Google Font (exemplo) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="CSS/styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+
+  <body>
+    <!-- BOTÃO VOLTAR AO TOPO -->
+    <button id="btnTopo" class="btn-topo">↑</button>
+
+    <!-- HEADER / MENU -->
+    <header class="topo">
+      <div class="container">
+        <strong class="logo">Raphael Álem</strong>
+
+        <nav class="menu">
+          <a href="#sobre">Sobre</a>
+          <a href="#projetos">Projetos</a>
+          <a href="#skills">Skills</a>
+          <a href="#contato">Contato</a>
+        </nav>
+
+        <div class="acoes">
+          <button id="btnIdioma" class="btn">🇺🇸</button>
+          <button id="btnTema" class="btn">🌙</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="container">
+      <!-- SOBRE MIM -->
+      <section class="caixa sobre" id="sobre">
+        <div class="sobre-conteudo">
+          <img
+            src="img/Raphael.jpg"
+            alt="Foto de Raphael Álem"
+            class="foto-perfil"
+          />
+
+          <div class="texto-sobre">
+            <h1 id="titulo"></h1>
+            <p id="descricao"></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJETOS -->
+      <section class="caixa" id="projetos">
+        <h2 id="titulo-projetos"></h2>
+
+        <div class="projeto">
+          <img
+            src="img/projeto1.png"
+            alt="Print do projeto tema claro e escuro"
+          />
+
+          <h3 id="nome-projeto1"></h3>
+          <p id="desc-projeto1"></p>
+
+          <div class="botoes-projeto">
+            <a href="#" class="btn" target="_blank" rel="noopener noreferrer">
+              Ver projeto
+            </a>
+            <a
+              href="#"
+              class="btn primario"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver código
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section class="caixa" id="skills">
+        <h2 id="titulo-skills"></h2>
+        <ul id="lista-skills"></ul>
+      </section>
+
+      <!-- CONTATO -->
+      <section class="caixa" id="contato">
+        <h2 id="titulo-contato"></h2>
+        <p>
+          Email: <a href="mailto:rapha.alem@gmail.com">rapha.alem@gmail.com</a>
+        </p>
+        <p>
+          GitHub:
+          <a href="https://github.com/Raaphyr" target="_blank"
+            >github.com/Raaphyr</a
+          >
+        </p>
+        <p>
+          LinkedIn:
+          <a href="https://www.linkedin.com/in/raphael-alem" target="_blank"
+            >linkedin.com/in/raphael-alem</a
+          >
+        </p>
+      </section>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="rodape">
+      <div class="container">
+        <small>© <span id="ano"></span> • Feito por Raphael Álem</small>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,248 @@
+/* ================= VARIÁVEIS (TEMA) ================= */
+:root {
+  --bg: #ffffff;
+  --texto: #111111;
+  --borda: #e5e7eb;
+  --caixa: #f8fafc;
+  --acao: #2563eb;
+}
+
+[data-tema="escuro"] {
+  --bg: #0b1220;
+  --texto: #e5e7eb;
+  --borda: #1f2937;
+  --caixa: #111827;
+  --acao: #38bdf8;
+}
+
+/* ================= RESET ================= */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Inter", Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--texto);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================= CONTAINER ================= */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ================= HEADER ================= */
+.topo {
+  position: sticky;
+  top: 0;
+  background-color: var(--bg);
+  border-bottom: 1px solid var(--borda);
+  z-index: 100;
+}
+
+.topo .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.logo {
+  font-weight: 700;
+}
+
+.menu a {
+  margin: 0 0.5rem;
+  text-decoration: none;
+  color: var(--texto);
+  font-weight: 500;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+.acoes {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* ================= SEÇÕES ================= */
+.caixa {
+  border: 1px solid var(--borda);
+  background-color: var(--caixa);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  margin: 2rem auto;
+}
+
+/* ================= SOBRE ================= */
+.sobre-conteudo {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.foto-perfil {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--borda);
+}
+
+.texto-sobre {
+  max-width: 600px;
+}
+
+/* ================= TÍTULOS ================= */
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  margin: 0.5rem 0;
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* ================= BOTÕES ================= */
+.btn {
+  padding: 0.5rem 0.9rem;
+  border: 1px solid var(--borda);
+  background-color: var(--bg);
+  color: var(--texto);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    transform 0.2s,
+    opacity 0.2s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.btn.primario {
+  background-color: var(--acao);
+  color: #fff;
+  border: none;
+}
+
+/* ================= PROJETOS ================= */
+.projeto {
+  margin-top: 1rem;
+}
+
+.projeto img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.botoes-projeto {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+/* ================= SKILLS ================= */
+#lista-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+#lista-skills li {
+  padding: 0.4rem 0.7rem;
+  border: 1px solid var(--borda);
+  border-radius: 0.5rem;
+  background-color: var(--bg);
+}
+
+/* ================= CONTATO ================= */
+#contato a {
+  color: var(--acao);
+  text-decoration: none;
+}
+
+#contato a:hover {
+  text-decoration: underline;
+}
+
+/* ================= BOTÃO TOPO ================= */
+.btn-topo {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  padding: 0.6rem 0.9rem;
+  border-radius: 50%;
+  border: 1px solid var(--borda);
+  background-color: var(--acao);
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ================= RODAPÉ ================= */
+.rodape {
+  border-top: 1px solid var(--borda);
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+  margin-top: auto;
+}
+
+/* ================= ANIMAÇÃO LEVE ================= */
+.caixa {
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= RESPONSIVO ================= */
+@media (max-width: 600px) {
+  .menu {
+    display: none;
+  }
+
+  .sobre-conteudo {
+    flex-direction: column;
+    text-align: center;
+  }
+}
