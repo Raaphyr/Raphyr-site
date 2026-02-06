@@ -172,16 +172,25 @@ p {
 #lista-skills {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 1rem;
   padding: 0;
   list-style: none;
 }
 
 #lista-skills li {
-  padding: 0.4rem 0.7rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
   border: 1px solid var(--borda);
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
   background-color: var(--bg);
+  font-size: 0.9rem;
+}
+
+#lista-skills img {
+  width: 24px;
+  height: 24px;
 }
 
 /* ================= CONTATO ================= */

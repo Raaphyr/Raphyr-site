@@ -109,10 +109,48 @@ btnTopo.addEventListener("click", () => {
 
 const listaSkills = document.getElementById("lista-skills");
 
-const skills = ["HTML", "CSS", "JavaScript", "React", "Vue", "Angular"];
+const skills = [
+  {
+    nome: "HTML",
+    icone:
+      "https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg",
+  },
+  {
+    nome: "CSS",
+    icone:
+      "https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg",
+  },
+  {
+    nome: "JavaScript",
+    icone:
+      "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg",
+  },
+  {
+    nome: "React",
+    icone:
+      "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg",
+  },
+  {
+    nome: "Vue",
+    icone:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
+  },
+  {
+    nome: "Angular",
+    icone:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg",
+  },
+];
+
+listaSkills.innerHTML = "";
 
 skills.forEach((skill) => {
   const li = document.createElement("li");
-  li.textContent = skill;
+
+  li.innerHTML = `
+    <img src="${skill.icone}" alt="Ícone ${skill.nome}" />
+    <span>${skill.nome}</span>
+  `;
+
   listaSkills.appendChild(li);
 });
