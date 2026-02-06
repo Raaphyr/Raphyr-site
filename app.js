@@ -163,7 +163,7 @@ skills.forEach((skill) => {
   listaSkills.appendChild(li);
 });
 
-// ================= PROJETOS (CARROSSEL) =================
+// ================= PROJETOS (CARROSSEL COM IMAGENS AUTOMÁTICO) =================
 
 const projetos = [
   {
@@ -212,18 +212,30 @@ const projetos = [
 
 const carrossel = document.getElementById("carrossel-projetos");
 let indiceProjeto = 0;
+let indiceImagem = 0;
+let intervalo;
 
 function renderProjeto() {
   const projeto = projetos[indiceProjeto];
-  const idioma = idiomaAtual;
-
-  const descricao = idioma === "pt" ? projeto.descricaoPT : projeto.descricaoEN;
+  const descricao =
+    idiomaAtual === "pt" ? projeto.descricaoPT : projeto.descricaoEN;
 
   carrossel.innerHTML = `
     <div class="projeto-card">
       <h3>${projeto.nome}</h3>
 
-      <img src="img/${projeto.imagens[0]}" alt="Imagem do projeto ${projeto.nome}" />
+      <div class="slider-imagens">
+        <div class="slider-track" style="transform: translateX(-${
+          indiceImagem * 100
+        }%);">
+          ${projeto.imagens
+            .map(
+              (img) =>
+                `<img src="img/${img}" alt="Imagem do projeto ${projeto.nome}" />`,
+            )
+            .join("")}
+        </div>
+      </div>
 
       <p>${descricao}</p>
 
@@ -241,19 +253,48 @@ function renderProjeto() {
       </div>
     </div>
   `;
+
+  document.querySelector(".slider-imagens").addEventListener("click", () => {
+    proximaImagem();
+  });
+
+  iniciarAutoSlide();
 }
 
+function proximaImagem() {
+  const total = projetos[indiceProjeto].imagens.length;
+  indiceImagem = (indiceImagem + 1) % total;
+  atualizarSlide();
+}
+
+function atualizarSlide() {
+  const track = document.querySelector(".slider-track");
+  if (track) {
+    track.style.transform = `translateX(-${indiceImagem * 100}%)`;
+  }
+}
+
+function iniciarAutoSlide() {
+  clearInterval(intervalo);
+  intervalo = setInterval(() => {
+    proximaImagem();
+  }, 3000); // tempo em ms (3s)
+}
+
+// botões projeto
 document.getElementById("btn-prev").addEventListener("click", () => {
   indiceProjeto = indiceProjeto === 0 ? projetos.length - 1 : indiceProjeto - 1;
+  indiceImagem = 0;
   renderProjeto();
 });
 
 document.getElementById("btn-next").addEventListener("click", () => {
   indiceProjeto = indiceProjeto === projetos.length - 1 ? 0 : indiceProjeto + 1;
+  indiceImagem = 0;
   renderProjeto();
 });
 
-// Atualizar quando trocar idioma
+// idioma
 const trocarIdiomaOriginal = trocarIdioma;
 trocarIdioma = function () {
   trocarIdiomaOriginal();
